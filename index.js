@@ -83,9 +83,9 @@ function keyboardSound(key) {
 }
 function btnAnimation(ckey) {
     var abtn = document.querySelector("." + ckey);
-    abtn.classList.add(".pressed");
+    abtn.classList.add("pressed");
     setTimeout(function() {
-        abtn.classList.remove(".pressed")
+        abtn.classList.remove("pressed")
     }, 200);
     
 }
