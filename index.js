@@ -2,6 +2,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
         var innerHTML = this.innerHTML;
+        btnAnimation(innerHTML)
 
         switch (innerHTML) {
             case 'w':
@@ -41,6 +42,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 }
 document.addEventListener("keydown", function(event) {
     keyboardSound(event.key)
+    btnAnimation(event.key)
 })
 
 function keyboardSound(key) {
@@ -78,4 +80,12 @@ function keyboardSound(key) {
             console.log("something went wrong")
             break;
     }
+}
+function btnAnimation(ckey) {
+    var abtn = document.querySelector("." + ckey);
+    abtn.classList.add("pressed");
+    setTimeout(function() {
+        abtn.classList.remove("pressed")
+    }, 200);
+    
 }
