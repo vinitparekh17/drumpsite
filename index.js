@@ -38,6 +38,11 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
                 console.log("something went wrong")
                 break;
         }
+                var clicks = document.querySelector("." + innerHTML)
+        clicks.classList.add("pressed")
+        setTimeout(() => {
+            clicks.classList.remove("pressed")
+        }, 200);
     })
 }
 document.addEventListener("keydown", function(event) {
@@ -81,11 +86,11 @@ function keyboardSound(key) {
             break;
     }
 }
-function btnAnimation(ckey) {
-    var abtn = document.querySelector("." + ckey);
-    abtn.classList.add("pressed")
-    setTimeout(function() {
-        abtn.classList.remove("pressed")
-    }, 2000);
-    
+
+
+    var btn = document.querySelector("." + key);
+    btn.classList.add("pressed")
+    setTimeout(() => {
+        btn.classList.remove("pressed")
+    }, 200);
 }
